@@ -46,9 +46,10 @@ function round(playerSelection, computerSelection){
 function userInput(){
     
     const input = prompt("Rock, Paper, Scissors? (r/p/s/random): ")
-
-    switch(input.charAt(0).toLowerCase()){
     
+
+    switch(input){
+        
         case "r":
             return "rock";
             break;
@@ -61,13 +62,14 @@ function userInput(){
         default:
             return computerPlay();
     }
+    
 }
 
 function playRound(){
     const playerSelection = userInput();
     const computerSelection = computerPlay();
 
-    return playRound(playerSelection, computerSelection);
+    return round(playerSelection, computerSelection);
 }
 
 function game(){
@@ -90,9 +92,9 @@ function game(){
     }
 
     if (playerWins > computerWins){
-        alert(`You won! $(playerWins) to $(computerWins)`);
+        alert(`You won! ${playerWins} to ${computerWins}`);
     } else {
-        alert(`You lost! $(computerWins) to $(playerWins)`);
+        alert(`You lost! ${computerWins} to ${playerWins}`);
     }    
 }
 
