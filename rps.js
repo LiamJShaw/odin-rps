@@ -12,90 +12,104 @@ function computerPlay(){
     }
 }
 
-function round(playerSelection, computerSelection){
+function playRound(playerSelection){
+
+    let computerSelection = computerPlay();
     
     if (playerSelection === computerSelection){
-        return "draw";
+        resultDisplay.textContent = "Computer win!";
     }
 
     if (playerSelection === "rock"){
         if (computerSelection === "paper"){
-            return "computer";
+            computerWin();
         } else {
-            return "player";
+            playerWin();
         } 
     }
     
     if (playerSelection === "paper"){
         if (computerSelection === "scissors"){
-            return "computer";
+            computerWin();
         } else {
-            return "player";
+            playerWin();
         }
     }
     
     if (playerSelection === "scissors"){
         if (computerSelection === "rock"){
-            return "computer";
+            computerWin();
         } else {
-            return "player";
-        }
-    }
-}
-
-function userInput(){
-    
-    const input = prompt("Rock, Paper, Scissors? (r/p/s/random): ")
-    
-
-    switch(input){
-        
-        case "r":
-            return "rock";
-            break;
-        case "p":
-            return "paper";
-            break;
-        case "s":
-            return "scissors";
-            break;
-        default:
-            return computerPlay();
-    }
-    
-}
-
-function playRound(){
-    const playerSelection = userInput();
-    const computerSelection = computerPlay();
-
-    return round(playerSelection, computerSelection);
-}
-
-function game(){
-    
-    const rounds = [];
-    let playerWins = 0;
-    let computerWins = 0;
-
-    for (let i = 0; i < 5; i++){
-        rounds.push(playRound());
-    }
-
-    for (let i = 0; i < 5; i++){
-        
-        if (rounds[i] === "player"){
-            playerWins++;
-        } else {
-            computerWins++;
+            playerWin();
         }
     }
 
-    if (playerWins > computerWins){
-        alert(`You won! ${playerWins} to ${computerWins}`);
-    } else {
-        alert(`You lost! ${computerWins} to ${playerWins}`);
-    }    
+    if (playerWins === 5){
+        resultDisplay.textContent = "";
+        winnerDisplay.textContent = "Player wins!";
+    }
+    
+    if (computerWins === 5){
+        resultDisplay.textContent = "";
+        winnerDisplay.textContent = "Computer wins!";
+    }
+
+    if (playerWins === 5 || computerWins === 5){
+        resetButton.style.display = "block";
+    }
+
 }
 
-game();
+function computerWin(){
+    computerWins++;
+    resultDisplay.textContent = "Computer win!";
+    computerWinsDisplay.textContent = "Computer: " + computerWins;
+}
+
+function playerWin(){
+    playerWins++;
+    resultDisplay.textContent = "Player win!"
+    playerWinsDisplay.textContent = "Player: " + playerWins;
+}
+
+
+let playerWins = 0;
+let computerWins = 0;
+
+const resultDisplay = document.querySelector("#result");
+const winnerDisplay = document.querySelector("#winner");
+
+const playerWinsDisplay = document.querySelector("#playerWins");
+const computerWinsDisplay = document.querySelector("#computerWins");
+
+const resetButton = document.querySelector("#reset");
+resetButton.style.display = "none";
+
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors');
+
+rock.addEventListener('click', () => {
+    playRound("rock");
+});
+
+paper.addEventListener('click', () => {
+    playRound("paper");
+  });
+
+scissors.addEventListener('click', () => {
+    playRound("scissors");
+  });
+
+reset.addEventListener('click', () => {
+    playerWins = 0;
+    computerWins = 0;
+
+    resultDisplay.textContent = "";
+    winnerDisplay.textContent = "";
+
+    playerWinsDisplay.textContent = "Player: 0";
+    computerWinsDisplay.textContent = "Computer: 0";
+
+    resetButton.style.display = "none";
+});
