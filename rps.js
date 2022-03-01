@@ -47,17 +47,14 @@ function playRound(playerSelection){
     if (playerWins === 5){
         resultDisplay.textContent = "";
         winnerDisplay.textContent = "Player wins!";
+        resetButton.style.display = "block";
     }
     
     if (computerWins === 5){
         resultDisplay.textContent = "";
         winnerDisplay.textContent = "Computer wins!";
-    }
-
-    if (playerWins === 5 || computerWins === 5){
         resetButton.style.display = "block";
     }
-
 }
 
 function computerWin(){
