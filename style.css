@@ -1,57 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-* { 
-    color: white;
-    font-family: 'Courier New', Courier, monospace;
+* {
     box-sizing: border-box;
-}
+    margin: 0;
+    padding: 0;
 
-h1 {
-    font-size: 64px;
+    font-family: Roboto, sans-serif;
 }
 
 body {
-    background-color: black;
     height: 100vh;
-    margin: 0;
-    overflow: hidden;
+    background-color: black;
 }
 
 .container {
     display: flex;
     flex-direction: column;
+    height: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    justify-items: center;
+
+    background-color: black;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    padding: 50px;
+
 }
 
 .scores {
+    flex: 1;
+
     display: flex;
+    justify-content: center;
     align-items: center;
-    align-content: center;
-    gap: 24px;
+
+    padding: 50px;
+
+    background-color: black;
+    color: white;
+
     text-align: center;
 }
 
 .player,
 .computer {
-    font-size: 32px;
-    margin: 20px;
-    padding: 10px;
+    flex: 1;
 }
 
-.info{
-    font-size: 32px;
+#playerName,
+#computerName {
+    font-weight: bold;
+    font-size: x-large;
+}
+
+#playerWins,
+#computerWins {
+
+    font-size: xx-large;
+}
+
+.h3 {
+    font-weight: bold;
+}
+
+.buttons {
+    flex: 1;
+    
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+
     justify-content: center;
+    align-items: center;
+
+}
+
+.buttons > button {
+    border-style: none;
+    border-radius: 10px;
+    background: none;
+
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    cursor:pointer;
+
+    width:100px;
+    height:100px;
+
+    margin: 24px;
     
 }
 
-button {
-    color: black;
+.icon{
+    height: 100%;
+}
+
+.info {
+    flex: 1;
+    min-height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.reset {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reset button {
     margin: 20px;
-    padding: 30px;
-    border: none;
-    border-radius: 8px;
+    padding: 40px;
+
     font-size: large;
     font-weight: bold;
+    color: white;
+    background: none;
+
+    border-style: solid;
+    border-radius: 10px;
+
+    cursor:pointer;
 }
