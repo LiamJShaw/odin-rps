@@ -45,14 +45,12 @@ function playRound(playerSelection){
     }
 
     if (playerWins === 5){
-        resultDisplay.textContent = "";
-        winnerDisplay.textContent = "Player wins!";
+        resultDisplay.textContent = "Player wins!";
         resetButton.style.display = "block";
     }
     
     if (computerWins === 5){
-        resultDisplay.textContent = "";
-        winnerDisplay.textContent = "Computer wins!";
+        resultDisplay.textContent = "Computer wins!";
         resetButton.style.display = "block";
     }
 }
@@ -60,13 +58,13 @@ function playRound(playerSelection){
 function computerWin(){
     computerWins++;
     resultDisplay.textContent = "Computer win!";
-    computerWinsDisplay.textContent = "Computer: " + computerWins;
+    computerWinsDisplay.textContent = computerWins;
 }
 
 function playerWin(){
     playerWins++;
     resultDisplay.textContent = "Player win!"
-    playerWinsDisplay.textContent = "Player: " + playerWins;
+    playerWinsDisplay.textContent = playerWins;
 }
 
 
@@ -74,7 +72,6 @@ let playerWins = 0;
 let computerWins = 0;
 
 const resultDisplay = document.querySelector("#result");
-const winnerDisplay = document.querySelector("#winner");
 
 const playerWinsDisplay = document.querySelector("#playerWins");
 const computerWinsDisplay = document.querySelector("#computerWins");
@@ -103,10 +100,9 @@ reset.addEventListener('click', () => {
     computerWins = 0;
 
     resultDisplay.textContent = "";
-    winnerDisplay.textContent = "";
 
-    playerWinsDisplay.textContent = "Player: 0";
-    computerWinsDisplay.textContent = "Computer: 0";
+    playerWinsDisplay.textContent = "0";
+    computerWinsDisplay.textContent = "0";
 
     resetButton.style.display = "none";
 });
