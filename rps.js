@@ -96,6 +96,8 @@ const computerBox = document.querySelector("#computer");
 const playerWinsDisplay = document.querySelector("#playerWins");
 const computerWinsDisplay = document.querySelector("#computerWins");
 
+const playerChoice = document.querySelector("#playerChoice");
+
 const resetButton = document.querySelector("#reset");
 resetButton.style.display = "none";
 

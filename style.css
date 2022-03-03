@@ -34,45 +34,38 @@ body {
 }
 
 .scores {
-    flex: 1;
+    background-color: black;
+    color: white;
+    text-align: center;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-
-    padding: 50px;
-
-    background-color: black;
-    color: white;
-
-    text-align: center;
 }
 
 #player,
 #computer {
-    flex-shrink: 0;
+    flex: 1;
 
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-content: center;
+    align-items: center;
     gap:25px;
 
     border-style: solid;
     border-radius: 10px;
     margin: 20px;
-    padding: 20px;
-    width: 250px;
-    height: 250px;
-    position: relative;
-    background-origin: content-box;
+    padding: 100px;
+
+    max-width: 250px;
+
+    ma   
 }
 
 #playerName,
 #computerName {
     font-weight: bold;
-    font-size: x-large;
+    font-size: large;
 }
 
 #playerWins,
@@ -86,7 +79,7 @@ body {
 }
 
 .buttons {
-    flex: 1;
+    flex-grow: 0;
     
     display: flex;
     flex-wrap: wrap;
@@ -94,8 +87,9 @@ body {
     justify-content: center;
     align-items: center;
 
-    padding: 100px;
+    padding: 50px;
 
+    size: 100%;
 }
 
 .buttons > button {
@@ -108,15 +102,16 @@ body {
 
     cursor:pointer;
 
-    width:160px;
-    height:160px;
+    flex:1;
 
-    margin: 24px;
-    
+    margin: 10px;
+
 }
 
 .icon{
-    height: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 .info {
@@ -130,6 +125,9 @@ body {
     background-color: black;
     color: white;
     text-align: center;
+
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .reset {
