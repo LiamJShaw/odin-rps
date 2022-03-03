@@ -33,6 +33,12 @@ body {
 
 }
 
+.results {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .scores {
     background-color: black;
     color: white;
@@ -49,17 +55,21 @@ body {
 
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    gap:25px;
+    gap: 25px;
 
     border-style: solid;
     border-radius: 10px;
     margin: 20px;
-    padding: 100px;
+    padding: 20px 100px 150px;
 
-    max-width: 250px;
+    max-width: 125px;
+    height: 100%;
 
-    ma   
+    background-repeat: no-repeat;
+    background-position: 50% 90%;
+    background-size: 50%;
 }
 
 #playerName,
@@ -102,7 +112,7 @@ body {
 
     cursor:pointer;
 
-    flex:1;
+    flex: 1;
 
     margin: 10px;
 

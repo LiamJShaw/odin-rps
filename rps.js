@@ -20,15 +20,7 @@ function playRound(playerSelection){
     let computerSelection = computerPlay();
 
     playerBox.style.backgroundImage = `url('${playerSelection}.png')`;
-    playerBox.style.backgroundSize = "50%";
-    playerBox.style.backgroundRepeat = "no-repeat"; 
-    playerBox.style.backgroundPosition = "bottom";
-
     computerBox.style.backgroundImage = `url('${computerSelection}.png')`;
-    computerBox.style.backgroundSize = "50%";
-    computerBox.style.backgroundRepeat = "no-repeat"; 
-    computerBox.style.backgroundPosition = "bottom";
-    
     
     if (playerSelection === computerSelection){
         resultDisplay.textContent = "Draw!";
