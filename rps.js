@@ -19,8 +19,8 @@ function playRound(playerSelection){
 
     let computerSelection = computerPlay();
 
-    playerBox.style.backgroundImage = `url('${playerSelection}.png')`;
-    computerBox.style.backgroundImage = `url('${computerSelection}.png')`;
+    playerChoice.src = `${playerSelection}.png`
+    computerChoice.src = `${computerSelection}.png`
     
     if (playerSelection === computerSelection){
         resultDisplay.textContent = "Draw!";
@@ -87,6 +87,7 @@ const playerWinsDisplay = document.querySelector("#playerWins");
 const computerWinsDisplay = document.querySelector("#computerWins");
 
 const playerChoice = document.querySelector("#playerChoice");
+const computerChoice = document.querySelector("#computerChoice");
 
 const resetButton = document.querySelector("#reset");
 resetButton.style.display = "none";

@@ -34,20 +34,16 @@ body,
 }
 
 .scores {
-    text-align: center;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
-    margin: 30px;
 }
 
 #player,
 #computer {
 
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
 
@@ -56,11 +52,8 @@ body,
     border-style: solid;
     border-radius: 10px;
     margin: 20px;
-    padding: 20px 20px 100px 150px;
+    padding: 100px;
 
-    background-repeat: no-repeat;
-    background-position: 50% 90%;
-    background-size: 50%;
 }
 
 #playerName,
@@ -72,6 +65,11 @@ body,
 #playerWins,
 #computerWins {
     font-size: xx-large;
+}
+
+#playerChoice,
+#computerChoice {
+    width: 100px;
 }
 
 .h3 {
@@ -103,7 +101,6 @@ body,
     flex: 1;
 
     margin: 10px;
-
 }
 
 .icon{
