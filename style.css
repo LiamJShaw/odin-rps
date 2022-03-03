@@ -9,13 +9,14 @@
 }
 
 body {
-    height: 100vh;
+    height: 80vh;
     background-color: black;
 }
 
 .container {
     display: flex;
     flex-direction: column;
+
     height: 100%;
 }
 
@@ -38,6 +39,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 10px;
 
     padding: 50px;
 
@@ -47,9 +49,24 @@ body {
     text-align: center;
 }
 
-.player,
-.computer {
-    flex: 1;
+#player,
+#computer {
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    gap:25px;
+
+    border-style: solid;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+    width: 250px;
+    height: 250px;
+    position: relative;
+    background-origin: content-box;
 }
 
 #playerName,
@@ -77,6 +94,8 @@ body {
     justify-content: center;
     align-items: center;
 
+    padding: 100px;
+
 }
 
 .buttons > button {
@@ -89,8 +108,8 @@ body {
 
     cursor:pointer;
 
-    width:100px;
-    height:100px;
+    width:160px;
+    height:160px;
 
     margin: 24px;
     
@@ -122,7 +141,6 @@ body {
 }
 
 .reset button {
-    margin: 20px;
     padding: 40px;
 
     font-size: large;

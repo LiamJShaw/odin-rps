@@ -14,13 +14,30 @@ function computerPlay(){
 
 function playRound(playerSelection){
 
+    computerBox.style.backgroundImage = ""
+    playerBox.style.backgroundImage = "";
+
     let computerSelection = computerPlay();
+
+    playerBox.style.backgroundImage = `url('${playerSelection}.png')`;
+    playerBox.style.backgroundSize = "50%";
+    playerBox.style.backgroundRepeat = "no-repeat"; 
+    playerBox.style.backgroundPosition = "bottom";
+
+    computerBox.style.backgroundImage = `url('${computerSelection}.png')`;
+    computerBox.style.backgroundSize = "50%";
+    computerBox.style.backgroundRepeat = "no-repeat"; 
+    computerBox.style.backgroundPosition = "bottom";
+    
     
     if (playerSelection === computerSelection){
-        resultDisplay.textContent = "Computer win!";
+        resultDisplay.textContent = "Draw!";
+        return;
     }
 
     if (playerSelection === "rock"){
+
+
         if (computerSelection === "paper"){
             computerWin();
         } else {
@@ -73,6 +90,9 @@ let computerWins = 0;
 
 const resultDisplay = document.querySelector("#result");
 
+const playerBox = document.querySelector("#player");
+const computerBox = document.querySelector("#computer");
+
 const playerWinsDisplay = document.querySelector("#playerWins");
 const computerWinsDisplay = document.querySelector("#computerWins");
 
@@ -105,4 +125,9 @@ reset.addEventListener('click', () => {
     computerWinsDisplay.textContent = "0";
 
     resetButton.style.display = "none";
+
+    computerBox.style.backgroundImage = ""
+    playerBox.style.backgroundImage = "";
+    playerBox.style.borderStyle = "solid";
+    computerBox.style.borderStyle = "solid";
 });
