@@ -28,8 +28,6 @@ function playRound(playerSelection){
     }
 
     if (playerSelection === "rock"){
-
-
         if (computerSelection === "paper"){
             computerWin();
         } else {

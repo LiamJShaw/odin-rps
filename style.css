@@ -8,16 +8,17 @@
     font-family: Roboto, sans-serif;
 }
 
-body {
-    height: 80vh;
+html, 
+body, 
+.container {
+    height: 100%;
+    margin: 0;
     background-color: black;
 }
 
 .container {
     display: flex;
     flex-direction: column;
-
-    height: 100%;
 }
 
 .header {
@@ -37,6 +38,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .scores {
@@ -47,12 +49,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    margin: 30px;
 }
 
 #player,
 #computer {
-    flex: 1;
-
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -63,9 +65,6 @@ body {
     border-radius: 10px;
     margin: 20px;
     padding: 20px 100px 150px;
-
-    max-width: 125px;
-    height: 100%;
 
     background-repeat: no-repeat;
     background-position: 50% 90%;
@@ -80,7 +79,6 @@ body {
 
 #playerWins,
 #computerWins {
-
     font-size: xx-large;
 }
 
@@ -89,8 +87,6 @@ body {
 }
 
 .buttons {
-    flex-grow: 0;
-    
     display: flex;
     flex-wrap: wrap;
 
